@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html  ng-app="myApp">
+  <head>
+    <title>Expandable and Collapsible Lists</title>
+    <style>
+      * { vertical-align: top; }
+      expand-list{
+        border: 2px ridge black; }
+      .expand-header{
+        text-align: center; 
+        font: bold 16px/24px arial; 
+         background-image: linear-gradient(#CCCCCC, #EEEEEE); 
+        }
+      .expand-button{
+        float: left; padding: 2px 4px;
+        font: bold 22px/16px courier; 
+        color: white; background-color: black; 
+        cursor: pointer; 
+        border: 3px groove grey; }
+      .expand-item {
+        border: 1px ridge black;}
+      p { margin: 0px; padding: 2px;}
+      label { display: inline-block; width: 80px; padding: 2px; }
+      .small { width: 100px; padding: 2px; }
+      .large { width: 300px; }
+    </style>
+  </head>
+  <body>
+  <h2>Expandable and Collapsible Lists</h2>
+  <hr>
+  <div ng-controller="myController">
+    <expand-list title="Companion" exwidth="120px">
+      <expand-item>Rose</expand-item>
+      <expand-item>Donna</expand-item>
+      <expand-item>Martha</expand-item>
+      <expand-item>Amy</expand-item>
+      <expand-item>Rory</expand-item>
+    </expand-list>
+    <expand-list title="Form" exwidth="280px">
+      <expand-item>
+        <label>Name</label>
+        <input type="text" /><br>
+        <label>Phone</label>
+        <input type="text" /><br>
+        <label>Address</label>
+        <input type="text" /><br>
+        <label>Comment</label>
+        <textarea type="text"></textarea>
+      </expand-item>
+    </expand-list>
+    <hr>
+    <expand-list title="Mixed List" exwidth="300px">
+      <expand-item>Text Item</expand-item>
+      <expand-item><p>I think therefore I am.</p></expand-item>
+      <expand-item>
+        <img class="small" src="/images/jump.jpg" />Sunset
+      </expand-item>
+      <expand-item>
+        <ul>
+          <li>AngularJS</li>
+          <li>jQuery</li>
+          <li>JavaScript</li>
+        </ul>
+      </expand-item>
+    </expand-list>
+    <expand-list title="Image" exwidth="300px">
+      <expand-item>
+        <img class="large" src="/images/lake.jpg" />
+      </expand-item>
+    </expand-list>
+  </div>
+  </body>
+  <script src="http://code.angularjs.org/1.3.0-beta.9/angular.min.js"></script>
+  <script src="js/expand.js"></script>
+</html>

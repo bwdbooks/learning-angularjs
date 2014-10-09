@@ -1,0 +1,38 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>Tab and Tab Pane Directives</title>
+  <style>
+    .tab{
+      display:inline-block; width:100px; 
+      border-radius: .5em .5em 0 0; border:1px solid black; 
+      text-align:center; font: 15px/28px Helvetica, sans-serif;
+      background-image: linear-gradient(#CCCCCC, #EEEEEE); 
+      cursor: pointer; }
+    .activeTab{
+      border-bottom: none;
+      background-image: linear-gradient(#66CCFF, #CCFFFF); }
+    .pane{
+      border:1px solid black; background-color: #CCFFFF; 
+      height:300px; width:400px; 
+      padding:10px;  margin-top:-2px;
+      overflow: scroll; }  
+  </style>
+</head>
+<body>
+  <h2>AngularJS Custom Tabs</h2>
+  <my-tabs>
+    <my-pane title="Canyon">
+      <img src="/images/canyon.jpg" />
+    </my-pane>
+    <my-pane title="Lake">
+      <img src="/images/lake.jpg" />
+    </my-pane>
+    <my-pane title="Sunset">
+      <img src="/images/jump.jpg" />
+    </my-pane>
+  </my-tabs>
+  <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+  <script src="js/tabbable.js"></script>
+</body>
+</html>

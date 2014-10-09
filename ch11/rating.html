@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html  ng-app="myApp">
+  <head>
+    <title>Ratings</title>
+    <style>
+      img {
+        width: 100px; }
+      .star {
+        display: inline-block;
+        width: 15px;
+        background-image: url("/images/star.png"); 
+        background-repeat: no-repeat;
+      }
+      .empty {
+        display: inline-block;
+        width: 15px;
+        background-image: url("/images/empty.png"); 
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+  <h2>Images With Ratings</h2>
+  <hr>
+  <div ng-controller="myController">
+    <div ng-repeat="item in items">
+      <img ng-src="{{item.img}}" />
+      {{item.description}}<br>
+      Rating: {{item.rating}} stars<br>
+      <span ng-repeat="idx in stars" 
+            ng-class=
+              "{true: 'star', false: 'empty'}[idx <= item.rating]" 
+            ng-click="adjustRating(item, idx)">&nbsp;
+      </span>      
+      <hr>
+    </div>
+  </div>
+  </body>
+  <script src="http://code.angularjs.org/1.3.0-beta.9/angular.min.js"></script>
+  <script src="js/rating.js"></script>
+</html>

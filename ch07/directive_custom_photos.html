@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>AngularJS Custom Directive</title>
+  <style>
+    img { width: 300px }
+  </style>
+</head>
+<body>
+  <h2>Custom Directive Photo Flip</h2>
+   <my-photos>
+     <my-photo title="Flower">
+       <img src="/images/flower.jpg"/>
+     </my-photo>
+     <my-photo title="Arch">
+       <img src="/images/arch.jpg"/>
+     </my-photo>
+     <my-photo title="Lake">
+       <img src="/images/lake.jpg"/>
+     </my-photo>
+     <my-photo title="Bison">
+       <img src="/images/bison.jpg"/>
+     </my-photo>
+   </my-photos>
+  <script src="http://code.angularjs.org/1.3.0-beta.9/angular.min.js"></script>
+  <script src="js/directive_custom_photos.js"></script>
+</body>
+</html>

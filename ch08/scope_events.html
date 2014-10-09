@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>AngularJS Scope Events</title>
+    <style>
+      span{
+        padding: 3px; border: 3px ridge; 
+        cursor: pointer; width: 100px; display: inline-block;
+        font: bold 18px/22px Geargia; text-align: center; 
+        color: white; background-color: blue }
+      label{
+        padding: 2px; margin: 5px 10px; font: 15px bold; 
+        display: inline-block; width: 50px; text-align: right; }
+      .lList { 
+        vertical-align: top;
+        display: inline-block; width: 130px; }
+      .cInfo { 
+        display: inline-block; width: 175px; 
+        border: 3px blue ridge; padding: 3px; }
+    </style>
+  </head>
+  <body>
+    <h2>Custom Events in Nested Controllers</h2>
+    <div ng-controller="Characters">
+      <div class="lList">
+	      <span ng-repeat="name in names"
+	            ng-click="changeName()">{{name}}
+	      </span>
+      </div>
+      <div class="cInfo">
+	      <div ng-controller="Character">
+	        <label>Name: </label>{{currentName}}<br>
+	        <label>Race: </label>{{currentInfo.race}}<br>
+	        <label>Weapon: </label>{{currentInfo.weapon}}<br>
+	        <span ng-click="deleteChar()">Delete</span>
+	      </div>
+      </div>
+    </div>
+    <script src="http://code.angularjs.org/1.3.0-beta.9/angular.min.js"></script>
+    <script src="js/scope_events.js"></script>
+  </body>
+</html>

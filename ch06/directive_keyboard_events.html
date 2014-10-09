@@ -1,0 +1,24 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>AngularJS Keyboard Event Directives</title>
+</head>
+<body>
+  <div ng-controller="myController">
+    <h2>Keyboard Event Directives</h2>
+    <input type="text" 
+        ng-keydown="keyState='Pressed'"
+        ng-keyup="keyPressed($event)"><hr>
+    Keyboard State:<br>
+      {{keyState}}<hr>
+    Last Key:<br>
+      {{keyInfo|json}}<hr>
+    Stored String:<br>
+      {{storedString}}<hr>
+    Recorded Key Strokes:<br>
+      {{keyStrokes}}
+  </div>
+  <script src="http://code.angularjs.org/1.3.0-beta.9/angular.min.js"></script>
+  <script src="js/directive_keyboard_events.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>AngularJS Event Directives</title>
+  <style>
+    img {
+      border: 3px ridge black;
+      height: 200px; width: 200px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div ng-controller="myController">
+    <h2>Event Directives</h2>
+    <img
+        src="/images/arch.jpg"
+        ng-mouseenter="mouseState='Entered'" 
+        ng-mouseleave="mouseState='Left'" 
+        ng-mouseclick="mouseState='Clicked'" 
+        ng-mousedown="mouseState='Down'" 
+        ng-mouseup="mouseState='Up'" 
+        ng-click="mouseClick($event)" 
+        ng-mousemove="mouseMove($event)"></img><hr>
+    Mouse State: {{mouseState}}<br/>
+    Mouse Position Info: {{mouseInfo|json}}<br/>
+    Last Click Info: {{lastClickInfo|json}}<br/>
+  </div>
+  <script src="http://code.angularjs.org/1.3.0-beta.9/angular.min.js"></script>
+  <script src="js/directive_mouse_events.js"></script>
+</body>
+</html>

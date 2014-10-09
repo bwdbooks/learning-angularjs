@@ -1,0 +1,63 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>HTML5 Draggable and Droppable Directives</title>
+  <style>
+    dropit, img, p{
+      vertical-align: top; text-align: center;
+		  width: 100px;
+		  display: inline-block;
+		}
+		p {
+		  color: white; background-color: black;
+		  font: bold 14px/16px arial;
+      margin: 0px; width: 96px;
+      border: 2px ridge grey;
+      background: linear-gradient(#888888, #000000);
+		}
+		span{
+		  display:inline-block; width: 100px;
+		  font: 16px/18px Georgia, serif; text-align: center;
+		  padding: 2px;
+		  background: linear-gradient(#FFFFFF, #888888);
+		}
+		.dragItem {
+		  color: red;
+      opacity: .5;
+		}
+    .dropItem {
+      border: 3px solid red;
+      opacity: .5;
+    }
+    #dragItems {
+      width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <h2>HTML5 Drag and Drop Components</h2>
+  <div ng-controller="myController">
+    Drag Status: {{dragStatus}}<br>
+    Drop Status: {{dropStatus}}
+    <hr>
+    <div id="dragItems">
+	    <span dragit>Nature</span>
+	    <span dragit>Landscape</span>
+	    <span dragit>Flora</span>
+	    <span dragit>Sunset</span>
+	    <span dragit>Arch</span>
+	    <span dragit>Beauty</span>
+	    <span dragit>Inspiring</span>
+      <span dragit>Summer</span>
+      <span dragit>Fun</span>
+    </div>
+    <hr>
+    <dropit><img src="/images/arch.jpg" /></dropit>
+    <dropit><img src="/images/flower.jpg" /></dropit>
+    <dropit><img src="/images/cliff.jpg" /></dropit>
+    <dropit><img src="/images/jump.jpg" /></dropit>
+  </div>
+  <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+  <script src="js/dragdrop.js"></script>
+</body>
+</html>

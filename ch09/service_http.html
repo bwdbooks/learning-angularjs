@@ -1,0 +1,38 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>AngularJS $http Service</title>
+  <style>
+    span { 
+      color:red; cursor: pointer; }
+    .myList { 
+      display: inline-block; width: 200px; 
+      vertical-align: top; }
+  </style>
+</head>
+<body>
+  <div ng-controller="myController">
+    <h2>GET and POST Using $http Service</h2>
+    <input type="button" ng-click="resetStore()"
+           value="Restock Store"/>
+    {{status}}
+    <hr>
+    <div class="myList">
+	    <h3>The Store</h3>
+	    <div ng-repeat="(item, count) in storeItems">
+	      {{item}} ({{count}}) 
+	      [<span ng-click="buyItem(item)">buy</span>]
+	    </div>
+    </div>
+    <div class="myList">
+      <h3>My Kitchen</h3>
+      <div ng-repeat="(item, count) in kitchenItems">
+        {{item}} ({{count}}) 
+        [<span ng-click="useItem(item)">use</span>]
+      </div>
+    </div>
+  </div>
+  <script src="http://code.angularjs.org/1.3.0-beta.9/angular.min.js"></script>
+  <script src="js/service_http.js"></script>
+</body>
+</html>

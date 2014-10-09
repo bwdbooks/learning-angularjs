@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html  ng-app="myApp">
+  <head>
+    <title>Magnify</title>
+    <style>
+      .zoombox {
+        display: inline-block;
+        border: 3px ridge black; 
+        width: 100px; height: 100px; }
+      img {
+        height: 200px; 
+        vertical-align: top; }
+    </style>
+  </head>
+  <body>
+  <h2>Image Zoom Window</h2>
+  <div ng-controller="myController">
+    <zoomit  src="/images/flower.jpg"></zoomit>
+    <hr>
+    <zoomit  src="/images/arch.jpg"></zoomit>
+  </div>
+  </body>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://code.angularjs.org/1.3.0-beta.9/angular.min.js"></script>
+  <script src="js/zooming.js"></script>
+</html>

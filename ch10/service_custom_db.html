@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>AngularJS Custom Database Service</title>
+	<style>
+	  label { 
+	    display: inline-block; width: 75px; text-align: right; }
+	  td, tr { 
+	    width: 125px; text-align: right; }
+	  p {
+	    color: red; font: italic 12px/14px; margin: 0px;}
+	  h3 { 
+	    margin: 5px; }
+	</style>
+</head>
+<body>
+  <h2>Custom Database Service:</h2>
+  <div ng-controller="myController">
+    <h3>User Info:</h3>
+    <label>First:</label>
+      <input type="text" ng-model="userInfo.first" /><br>    
+    <label>Last:</label>
+      <input type="text" ng-model="userInfo.last" /><br>    
+    <label>Username:</label>
+      <input type="text" ng-model="userInfo.username" /><br>    
+    <label>Title:</label>
+      <input type="text" ng-model="userInfo.title" /><br>    
+    <label>Home:</label>
+      <input type="text" ng-model="userInfo.home" /><br>
+    <input type= button ng-click="updateUser()" value="Update User" />
+    <input type= button ng-click="getUser()" value="Refresh User Info" />
+    <hr>
+    <p>{{status}}</p>
+    <hr>
+    <h3>Data:</h3>
+    <input type= button ng-click="updateData()" value="Update Data" />
+    <input type= button ng-click="getData()" value="Refresh Data Table" /><br>
+    <table>
+      <tr><th>Day</th><th>Time</th><th>Latitude</th><th>Longitude</th></tr>
+      <tr ng-repeat="datum in data">
+        <th>{{datum.day}}</th>
+        <td><input type="text" ng-model="datum.time" /></td>
+        <td><input type="text" ng-model="datum.latitude" /></td>
+        <td><input type="text" ng-model="datum.longitude" /></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+  <script src="http://code.angularjs.org/1.3.0-beta.9/angular.min.js"></script>
+  <script src="js/service_custom_db_access.js"></script>
+  <script src="js/service_custom_db.js"></script>
+</body>
+</html>

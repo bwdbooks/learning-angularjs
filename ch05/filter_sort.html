@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>AngularJS Sorting and Filtering</title>
+    <style>
+      table{text-align:right;}
+      td,th{padding:3px;}
+      th{cursor:pointer;}
+    </style>
+  </head>
+  <body>
+    <div ng-controller="myController">
+      <h2>Sorting and Filtering</h2>
+      <input type="text" ng-model="filterString">
+      <input type="button" ng-click="setFilter()" value="Filter">
+      <table>
+      <tr>
+        <th ng-click="setSort('make')">Make</th>
+        <th ng-click="setSort('model')">Model</th>
+        <th ng-click="setSort('capacity')">Capacity</th>
+      </tr>
+      <tr ng-repeat=
+          "plane in filteredPlanes | orderBy:column:reverse">
+        <td>{{plane.make}}</td>
+        <td>{{plane.model}}</td>
+        <td>{{plane.capacity}}</td>
+      </tr>
+      </table>
+    <script src="http://code.angularjs.org/1.3.0-beta.9/angular.min.js"></script>
+    <script src="js/filter_sort.js"></script>
+  </body>
+</html>
