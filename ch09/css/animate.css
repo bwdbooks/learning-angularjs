@@ -1,4 +1,4 @@
-.shrink-add, .shrink-remove {
+.shrink-add, .grow-add {
   -webkit-transition:all ease 2.5s;
   -moz-transition:all ease 2.5s;
   -o-transition:all ease 2.5s;
@@ -6,9 +6,10 @@
 }
 .shrink,
 .shrink-add.shrink-add-active {
-  width:100px;
+	width:100px;
 }
-.start-class, 
-.shrink-remove.shrink-remove-active {
+.start-class,
+.grow,  
+.grow-add.grow-add-active {
   width:400px;
 }
