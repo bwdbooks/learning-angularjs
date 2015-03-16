@@ -17,7 +17,7 @@ angular.module('myApp', [])
       $scope.reverse = !$scope.reverse;
     };
     $scope.filterString = '';
-    $scope.setFilter = function(value){
+    $scope.setFilter = function(){
       $scope.filteredPlanes = 
         filterFilter($scope.planes, $scope.filterString);
     };
